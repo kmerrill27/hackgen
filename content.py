@@ -9,7 +9,7 @@ words = {'noun': ['hacker', 'user', 'manager', 'tweeter', 'newbie', 'pro', 'guru
         'time': ['seconds', 'hours', 'minutes'],
         'startup': ['twitter', 'GitHub', 'reddit', 'facebook', 'weather.com', 'Quora',
                         'Square', 'Amazon', 'BuzzFeed', 'mongoDB', 'Python', 'Java',
-                        '4chan', 'digg', 'jQuery', 'Ruby', 'Perl', 'Haskel'],
+                        '4chan', 'digg', 'jQuery', 'Ruby', 'Perl', 'Haskell'],
         'adverb': ['efficiently', 'quickly', 'perfectly', 'reliably'],
 <<<<<<< HEAD
         'verbing': ['coding', 'socializing', 'networking', 'playing', 'working',
@@ -21,7 +21,7 @@ words = {'noun': ['hacker', 'user', 'manager', 'tweeter', 'newbie', 'pro', 'guru
         'firstName': ['Buzz', 'Cloud', 'My', 'Face', 'Git', 'Micro', 'Server',
                         'Hacker', 'Dr', 'Scale', 'Ghost', 'Fire', 'Agile'],
         'secondName': ['Feed', 'Book', 'Hub', '.js', 'DB', 'Flare', 'Connect',
-                        'Py', 'Star', 'News', 'Bucket', 'Clound', 'Combinator'],
+                        'Py', 'Star', 'News', 'Bucket', 'Cloud', 'Combinator'],
         'app': ['app', 'script', 'database', 'game', 'software', 'product'],
         'feature': ['aggregator', 'news feed', 'search engine', 'database',
                     'interpreter', 'ticker', 'algorithm', 'architecture'],
