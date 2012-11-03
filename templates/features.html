@@ -1,0 +1,9 @@
+<div class="row-fluid">
+    {% for feature in vals.feature3s %}
+    <div class="span4">
+        <img src="{{ feature.img }}" \>
+        <h2>{{ feature.tagline }}</h2>
+        <p>{{ feature.text }}</p>
+    </div>
+    {% endfor %}
+</div>
