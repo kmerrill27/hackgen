@@ -1,6 +1,7 @@
 from flask import (
     Flask,
     render_template)
+import random
 app = Flask(__name__)
 
 @app.route("/")
@@ -10,8 +11,10 @@ def show_random():
 
 class RandomValues:
     def __init__(self):
-        self.first = 1
-        self.second = 2
+        self.theme = getTheme
+
+    def getTheme(self):
+        return 'theme' + random.randint(1,11) + '.css'
 
 if __name__ == "__main__":
     app.run()
