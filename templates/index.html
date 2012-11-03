@@ -17,14 +17,13 @@
 <body>
     {# -- Navbar -- #}
     {% include "navbar-top.html"%}
-
-	{% if bools == 0 %}
-    <div style="width:800; height:500; margin-top:5%; margin-left:auto; margin-right:auto">
-        {% include 'carousel.html' %}
-    </div>
-
+    
     <div class="container" style="padding-top: 75px; vertical-align: middle; border-bottom: 1px solid #DDD; padding-bottom: 50px;">
         {% include "blurb.html" %}
+    </div>
+    
+    <div style="width:800; height:500; margin-top:5%; margin-left:auto; margin-right:auto">
+        {% include 'carousel.html' %}
     </div>
 
     {# Content #}
@@ -35,7 +34,6 @@
     <div class="continer" style="padding-bottom: 50px; padding-top: 50px">
         {% include "featurette.html" %}
     </div>
-	{% endif %}
 
     {# -- Bottom Navbar -- #}
     {% include "navbar-bottom.html" %}
