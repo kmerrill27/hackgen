@@ -17,3 +17,11 @@ h3 {
 min-padding {
 	margin-left: 0px;
 }
+
+img {
+	margin-right: 20px;
+}
+
+.fixed-box {
+	padding: 10px 10px 30px 10px;
+}

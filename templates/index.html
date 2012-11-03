@@ -1,49 +1,39 @@
 <!DOCTYPE html PUBLIC>
-    
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-    <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title>{{ vals.name }}</title>
     <link href="{{ url_for('static', filename=vals.theme) }}" type="text/css" rel="stylesheet" media="screen">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script src="../static/js/bootstrap.min.js"></script>
+    <style media="screen" type="text/css">
+        body {
+            background-image: url('../static/img/background.gif');
+            background-repeat: repeat;
+        }
+    </style>
 </head>
 <body>
-    <div class="navbar navbar-fixed-top">
-        <div class="navbar-inner">
-            <div class="container">
-                <ul class="nav">
-                    {% for leftButton in vals.leftButtons %}
-                        <li class=''><a href="#">{{ leftButton }}</a></li>
-                    {% endfor %}
-                </ul>
-                <ul class="nav pull-right">
-                    {% for rightButton in vals.rightButtons %}
-                        <li class=''><a href="#">{{ rightButton }}</a></li>
-                    {% endfor %}
+    {# -- Navbar -- #}
+    {% if vals.navTop %}
+    {% include "navbar-top.html"%}
+    {% else %}
+    {% include "navbar-side.html" %}
+    {% endif %}
 
-                    {% if vals.searchBar %}
-                        <li>
-                            <form class="navbar-search">
-                                <input type="text" class="search-query" placeholder="Search">
-                            </form>
-                        </li>
-                    {% endif %}
-                </ul>
-            </div>
-        </div>
+    <div style="width:800; height:500; margin-top:5%; margin-left:auto; margin-right:auto">
+        {% include 'carousel.html' %}
     </div>
 
-    <div class="navbar navbar-fixed-bottom">
-        <div class="navbar-inner">
-            <div class="container">
-                <ul class="nav pull-right">
-                    <li class=''><a href="#">Contact us</a></li>
-                    <li class=''><a href="#">Careers</a></li>
-                    <li class=''><a href="#">Help center</a></li>
-                    <li class=''><a href="#">&copy; 2010-2012 {{ vals.name }}. All rights reserved.</a></li>
-                </ul>
-            </div>
-        </div>
-    </div>
+    {# -- Bottom Navbar -- #}
+    {% include "navbar-bottom.html" %}
 
+    <script>
+        $(document).ready(function() {
+            $('.carousel').carousel({
+                interval:10000
+            });
+        });
+    </script>
 </body>
 </html>
