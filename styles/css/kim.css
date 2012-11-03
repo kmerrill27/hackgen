@@ -25,3 +25,8 @@ img {
 .fixed-box {
 	padding: 10px 10px 30px 10px;
 }
+
+.fixed-panel {
+	width: 320px;
+	padding: 10px 10px;
+}
