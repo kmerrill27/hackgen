@@ -16,14 +16,15 @@ class RandomValues:
         self.theme = self.getTheme()
 
         # Get the buttons to be in the left and right of the navbar
-        buttons = ['About', 'Register', 'Support', 'Blog', 'Contact Us', 'Sign in']
-        i = random.randint(1,len(buttons))
-        j = random.randint(i,len(buttons))
-        k = random.randint(j,len(buttons))
+        buttons = ['Documentation', 'Press', 'API', 'Developers', 'Pricing', 'About', 'Register', 'Support', 'Blog', 'Contact Us', 'Sign in']
+        numButtons = random.randint(0,8)
+        buttonsChosen = random.sample(set(buttons), numButtons)
 
+        i = random.randint(0,numButtons)
+        j = random.randint(i,numButtons)
         self.leftButtons = [self.name]
-        self.leftButtons.extend(buttons[:i])
-        self.rightButtons = buttons[j:k]
+        self.leftButtons.extend(list(buttonsChosen)[:i])
+        self.rightButtons = list(buttonsChosen)[i:j]
 
         self.searchBar = randBool()
 
