@@ -1,0 +1,31 @@
+<div>
+<div id="chartdiv"></div>
+    <script type="text/javascript" src="jquery.min.js"></script>
+    <script type="text/javascript" src="jquery.jqplot.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="jquery.jqplot.css" />
+    <script>
+        function nextInt(n) {
+            return Math.floor(Math.random() * n);
+        }
+
+        function getRandomArray() {
+            var theArray = new Array();
+            var lastNumber = 0;
+            for(var i=0; i<15; i++) {
+                lastNumber += nextInt(30) - nextInt(15); 
+                theArray[i] = lastNumber; 
+            }
+            return theArray;
+        }
+
+        $(document).ready(function() {
+            var titles = ['Productivity', 'Unique Pageviews', 'Happiness']
+
+            var plot1 = $.jqplot ('chartdiv', [getRandomArray()],
+             { 'title': titles[Math.floor(Math.random() * titles.length)],
+                 'axesDefaults': { min: 0 } 
+             })
+            
+        });
+    </script>
+</div>
