@@ -34,7 +34,7 @@ class RandomValues:
         self.searchBar = randBool()
 
         bottomButtons = ['Contact', 'Copyright', 'Privacy', 'Roadmap', 'Sitemap', 'Changes', 'Jobs', 'Status']
-        self.bottomButtons = random.sample(bottomButtons, random.randint(2,4)))
+        self.bottomButtons = random.sample(bottomButtons, random.randint(2,4))
 
     def getTheme(self):
         return 'theme' + str(random.randint(1,8)) + '.css'
