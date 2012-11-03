@@ -17,7 +17,7 @@ class RandomValues:
 
         # Get the buttons to be in the left and right of the navbar
         buttons = ['Documentation', 'Press', 'API', 'Developers', 'Pricing', 'About', 'Register', 'Support', 'Blog', 'Contact Us', 'Sign in']
-        numButtons = random.randint(0,8)
+        numButtons = random.randint(0,6)
         buttonsChosen = random.sample(set(buttons), numButtons)
 
         i = random.randint(0,numButtons)

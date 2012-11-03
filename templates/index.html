@@ -1,10 +1,17 @@
 <!DOCTYPE html PUBLIC>
-    
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
     <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>>
     <title>{{ vals.name }}</title>
     <link href="{{ url_for('static', filename=vals.theme) }}" type="text/css" rel="stylesheet" media="screen">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script src="../static/js/bootstrap.min.js"></script>
+    <style media="screen" type="text/css">
+        body {
+            background-image: url('../static/img/background.gif');
+            background-repeat: repeat;
+        }
+    </style>
 </head>
 <body>
     <div class="navbar navbar-fixed-top">
@@ -32,6 +39,10 @@
         </div>
     </div>
 
+    <div style="width:800; height:500; margin-top:5%; margin-left:auto; margin-right:auto">
+    {% include 'carousel.html' %}
+    </div>
+
     <div class="navbar navbar-fixed-bottom">
         <div class="navbar-inner">
             <div class="container">
@@ -45,5 +56,12 @@
         </div>
     </div>
 
+    <script>
+        $(document).ready(function() {
+            $('.carousel').carousel({
+                interval:10000
+            });
+        });
+    </script>
 </body>
 </html>
