@@ -4,6 +4,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title>{{ vals.name }}</title>
     <link href="{{ url_for('static', filename=vals.theme) }}" type="text/css" rel="stylesheet" media="screen">
+	<<link href="../../static/css/kim.css" rel="stylesheet" media="screen">
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
     <script src="../static/js/bootstrap.min.js"></script>
     <style media="screen" type="text/css">
@@ -17,18 +18,19 @@
     {# -- Navbar -- #}
     {% include "navbar-top.html"%}
 
-    {#
+	{% if bools == 0 %}
     <div style="width:800; height:500; margin-top:5%; margin-left:auto; margin-right:auto">
         {% include 'carousel.html' %}
     </div>
-    #}
 
+	{% else %}
     {# Content #}
     <div class="container" style="padding-top: 70px;">
         {% if vals.feature3 %}
         {% include "features.html" %}
         {% endif %}
     </div>
+	{% endif %}
 
     {# -- Bottom Navbar -- #}
     {% include "navbar-bottom.html" %}

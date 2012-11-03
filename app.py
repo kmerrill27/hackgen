@@ -7,7 +7,8 @@ app = Flask(__name__)
 @app.route("/")
 def show_random():
     vals = RandomValues()
-    return render_template('index.html', vals=vals)
+    bools = random.randint(0,1)
+    return render_template('index.html', vals=vals, bools=bools)
 
 class RandomValues:
     def __init__(self):
