@@ -19,7 +19,7 @@ class RandomValues:
 
         # Get the buttons to be in the left and right of the navbar
         buttons = ['Documentation', 'Press', 'API', 'Developers', 'Pricing', 'About', 'Register', 'Support', 'Blog', 'Contact Us', 'Sign in']
-        numButtons = random.randint(0,6)
+        numButtons = random.randint(2,6)
 
         buttonsChosen = random.sample(buttons, numButtons)
 
@@ -32,7 +32,7 @@ class RandomValues:
         self.searchBar = randBool()
 
         bottomButtons = ['Contact', 'Copyright', 'Privacy', 'Roadmap', 'Sitemap', 'Changes', 'Jobs', 'Status']
-        self.bottomButtons = random.sample(bottomButtons, random.randint(1,len(bottomButtons)))
+        self.bottomButtons = random.sample(bottomButtons, random.randint(2,4))
 
         self.feature3 = True
         if self.feature3:# randBool(): # build 3 feature
@@ -48,7 +48,7 @@ class RandomValues:
             self.feature3s.append(Feature(imgs[i], "tagline", "some text"))
 
     def getTheme(self):
-        return 'theme' + str(random.randint(1,11)) + '.css'
+        return 'theme' + str(random.randint(1,8)) + '.css'
 
 
 class Feature():
