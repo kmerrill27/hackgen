@@ -11,12 +11,9 @@ words = {'noun': ['hacker', 'user', 'manager', 'tweeter', 'newbie', 'pro', 'guru
                         'Square', 'Amazon', 'BuzzFeed', 'mongoDB', 'Python', 'Java',
                         '4chan', 'digg', 'jQuery', 'Ruby', 'Perl', 'Haskell'],
         'adverb': ['efficiently', 'quickly', 'perfectly', 'reliably'],
-<<<<<<< HEAD
         'verbing': ['coding', 'socializing', 'networking', 'playing', 'working',
                         'developing'],
-=======
         'verbing': ['coding', 'socializing', 'networking', 'playing', 'working', 'developing'],
->>>>>>> 5a3facd2eee295212483d79b11c538d3d9626f4d
         'number': ['a hundred', 'three hundred', '10,000'],
         'firstName': ['Buzz', 'Cloud', 'My', 'Face', 'Git', 'Micro', 'Server',
                         'Hacker', 'Dr', 'Scale', 'Ghost', 'Fire', 'Agile'],
