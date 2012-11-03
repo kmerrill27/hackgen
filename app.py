@@ -15,17 +15,27 @@ class RandomValues:
         # Get the theme to be used
         self.theme = self.getTheme()
 
-        # Get the buttons to be in the left and right of the navbar
-        buttons = ['About', 'Register', 'Support', 'Blog', 'Contact Us', 'Sign in']
-        i = random.randint(1,len(buttons))
-        j = random.randint(i,len(buttons))
-        k = random.randint(j,len(buttons))
+        self.navTop = randBool()
 
-        self.leftButtons = [self.name]
-        self.leftButtons.extend(buttons[:i])
-        self.rightButtons = buttons[j:k]
+        # Get the buttons to be in the left and right of the navbar
+        buttons = ['Documentation', 'Press', 'API', 'Developers', 'Pricing', 'About', 'Register', 'Support', 'Blog', 'Contact Us', 'Sign in']
+        numButtons = random.randint(1,8)
+
+        if self.navTop:
+            buttonsChosen = random.sample(buttons, numButtons)
+
+            i = random.randint(0,numButtons)
+            j = random.randint(i,numButtons)
+            self.leftButtons = [self.name]
+            self.leftButtons.extend(list(buttonsChosen)[:i])
+            self.rightButtons = list(buttonsChosen)[i:j]
+        else:
+            self.buttons = list(random.sample(buttons, numButtons))
 
         self.searchBar = randBool()
+
+        bottomButtons = ['Contact', 'Copyright', 'Privacy', 'Roadmap', 'Sitemap', 'Changes', 'Jobs', 'Status']
+        self.bottomButtons = random.sample(bottomButtons, random.randint(1,len(bottomButtons)))
 
     def getTheme(self):
         return 'theme' + str(random.randint(1,11)) + '.css'

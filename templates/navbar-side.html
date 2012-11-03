@@ -1,0 +1,14 @@
+<!-- Side nav tabs -->
+<div class='span2'>
+    <ul class="nav nav-stacked nav-pills">
+        <!-- swap between nav-pills, nav-list -->
+        {# <li class='nav-header'>Header</li> #}
+        <li class='brand'><a href="#">{{ vals.name }}</a></li>
+        {% for button in vals.buttons %}
+            <li class=''><a href="#">{{ button }}</a></li>
+        {% endfor %}
+        {% if vals.searchBar %}
+            <li class=''><input type="text" class="input-small" placeholder="Search"></li>
+        {% endif %}
+    </ul>
+</div>
