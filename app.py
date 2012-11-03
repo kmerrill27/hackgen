@@ -11,6 +11,9 @@ def show_random():
 
 class RandomValues:
     def __init__(self):
+        # Brand Name
+        self.name = "HackGen"
+
         # Get the theme to be used
         self.theme = self.getTheme()
 
@@ -22,8 +25,16 @@ class RandomValues:
         i = random.randint(1,len(buttons))
         j = random.randint(i,len(buttons))
         k = random.randint(j,len(buttons))
-        self.leftButtons = buttons[:i]
+
+        self.leftButtons = []
+        self.rightButtons = []
+
+        if self.logoLeft:
+            self.leftButtons.append([self.name])
+        self.leftButtons.append(buttons[:i])
         self.rightButtons = buttons[j:k]
+        if not self.logoLeft:
+            self.rightButtons.append(self.name)
 
     def getTheme(self):
         return 'theme' + random.randint(1,11) + '.css'

@@ -1,9 +1,47 @@
-<!DOCTYPE HTML>
-<html lang="en">
-<head>
+<!DOCTYPE html PUBLIC>
+    
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+    <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>>
     <title>HackGen</title>
-    <link href="../styles/css/themes/{{ vals.theme }}" type="">
+    <link href="../styles/css/themes/{{ vals.theme }}" rel="stylesheet" media="screen">
 </head>
 <body>
+    <div class="navbar navbar-fixed-top">
+        <div class="navbar-inner">
+            <div class="container">
+                <ul class="nav">
+                    {% for rightButton in vals.rightButtons %}
+                        <li class=''><a href="#">{{ rightButton }}</a></li>
+                    <li class='active'><a href="#">Link1</a></li>
+                    <li class=''><a href="#">Link2</a></li>
+                </ul>
+                <ul class="nav pull-right">
+                    <li class=''><a href="#">Link3</a></li>
+                    <li class=''><a href="#">Link4</a></li>
+                    <li class=''><a href="#">Link5</a></li>
+                    <li>
+                        <form class="navbar-search">
+                            <input type="text" class="search-query" placeholder="Search">
+                        </form>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="navbar navbar-fixed-bottom">
+        <div class="navbar-inner">
+            <div class="container">
+                <ul class="nav pull-right">
+                    <li class=''><a href="#">Contact us</a></li>
+                    <li class=''><a href="#">Careers</a></li>
+                    <li class=''><a href="#">Help center</a></li>
+                    <li class=''><a href="#">&copy; 2010-2012 HackGen. All rights reserved.</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
 </body>
 </html>
