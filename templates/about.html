@@ -1,0 +1,30 @@
+<!DOCTYPE html PUBLIC>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>{{ vals.name }}</title>
+    <link href="{{ url_for('static', filename=vals.theme) }}" type="text/css" rel="stylesheet" media="screen">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script src="../static/js/bootstrap.min.js"></script>
+    <style media="screen" type="text/css">
+        body {
+            background-image: url('../static/img/background.gif');
+            background-repeat: repeat;
+        }
+    </style>
+</head>
+<body>
+    {# -- Navbar -- #}
+    {% include "navbar-top.html"%}
+
+    <div class="span6">
+        {% include widgets[0] %}
+    </div>
+    <div class="span6">
+        {% include widgets[1] %}
+    </div>
+
+    {# -- Bottom Navbar -- #}
+    {% include "navbar-bottom.html" %}
+</body>
+</html>
