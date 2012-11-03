@@ -4,26 +4,29 @@
     <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>>
     <title>HackGen</title>
-    <link href="../styles/css/themes/{{ vals.theme }}" rel="stylesheet" media="screen">
+    <link href="{{ url_for('static', filename=vals.theme) }}" type="text/css" rel="stylesheet" media="screen">
 </head>
 <body>
     <div class="navbar navbar-fixed-top">
         <div class="navbar-inner">
             <div class="container">
                 <ul class="nav">
-                    {% for rightButton in vals.rightButtons %}
-                        <li class=''><a href="#">{{ rightButton }}</a></li>
+                    {% for leftButton in vals.leftButtons %}
+                        <li class=''><a href="#">{{ leftButton }}</a></li>
+                    {% endfor %}
                 </ul>
                 <ul class="nav pull-right">
-                    {% for leftButton in vals.leftButtons %}
-                    <li class=''><a href="#">Link3</a></li>
-                    <li class=''><a href="#">Link4</a></li>
-                    <li class=''><a href="#">Link5</a></li>
-                    <li>
-                        <form class="navbar-search">
-                            <input type="text" class="search-query" placeholder="Search">
-                        </form>
-                    </li>
+                   {% for rightButton in vals.rightButtons %}
+                        <li class=''><a href="#">{{ rightButton }}</a></li>
+                    {% endfor %}
+
+                    {% if vals.searchBar %}
+                        <li>
+                            <form class="navbar-search">
+                                <input type="text" class="search-query" placeholder="Search">
+                            </form>
+                        </li>
+                    {% endif %}
                 </ul>
             </div>
         </div>
