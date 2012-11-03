@@ -1,9 +1,10 @@
 <div class="navbar navbar-fixed-top">
     <div class="navbar-inner">
         <div class="container">
-            <ul class="nav">
+            <a class="brand" href="#">{{ vals.name }}</a>
+            <ul class="nav pull-left">
                 {% for leftButton in vals.leftButtons %}
-                    <li class=''><a href="#">{{ leftButton }}</a></li>
+                    <li class=""><a href="#">{{ leftButton }}</a></li>
                 {% endfor %}
             </ul>
             <ul class="nav pull-right">
