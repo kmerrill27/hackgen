@@ -3,26 +3,30 @@ from random import choice
 words = {'noun': ['hacker', 'user', 'manager', 'tweeter', 'newbie', 'pro', 'guru'],
         'adjective': ['open-source', 'scalable', 'really awesome', 'cloud-based', 'Web 3.0',
                         'professional', 'resilient', 'incredibly exciting', 'robust',
-                        'long-awaited'],
+                        'long-awaited', 'agile'],
         'verb': ['code', 'conference', 'learn', 'network', 'connect',
                     'design', 'collaborate', 'synchronize'],
         'time': ['seconds', 'hours', 'minutes'],
         'startup': ['twitter', 'GitHub', 'reddit', 'facebook', 'weather.com', 'Quora',
-                        'square', 'amazon', 'BuzzFeed', 'mongoDB', 'Python', 'Java',
-                        '4chan', 'digg', 'jQuery'],
+                        'Square', 'Amazon', 'BuzzFeed', 'mongoDB', 'Python', 'Java',
+                        '4chan', 'digg', 'jQuery', 'Ruby', 'Perl', 'Haskel'],
         'adverb': ['efficiently', 'quickly', 'perfectly', 'reliably'],
+<<<<<<< HEAD
         'verbing': ['coding', 'socializing', 'networking', 'playing', 'working',
                         'developing'],
+=======
+        'verbing': ['coding', 'socializing', 'networking', 'playing', 'working', 'developing'],
+>>>>>>> 5a3facd2eee295212483d79b11c538d3d9626f4d
         'number': ['a hundred', 'three hundred', '10,000'],
         'firstName': ['Buzz', 'Cloud', 'My', 'Face', 'Git', 'Micro', 'Server',
-                        'Hacker', 'Dr', 'Scale', 'Ghost', 'Fire'],
+                        'Hacker', 'Dr', 'Scale', 'Ghost', 'Fire', 'Agile'],
         'secondName': ['Feed', 'Book', 'Hub', '.js', 'DB', 'Flare', 'Connect',
-                        'Py', 'Star', 'News'],
+                        'Py', 'Star', 'News', 'Bucket', 'Clound', 'Combinator'],
         'app': ['app', 'script', 'database', 'game', 'software', 'product'],
         'feature': ['aggregator', 'news feed', 'search engine', 'database',
                     'interpreter', 'ticker', 'algorithm', 'architecture'],
-        'comparative': ['better', 'faster', 'cleaner'],
-        'superlative': ['quickest', 'easiest', 'fastest'],
+        'comparative': ['better', 'faster', 'cleaner', 'easier', 'smarter'],
+        'superlative': ['quickest', 'easiest', 'fastest', 'cleanest', 'smartest'],
         'badNoun': ['limitations', 'a typo', 'connectivity', 'compatibility']
         }
 
@@ -33,7 +37,7 @@ paragraph = ('{name} is like {startup1} crossed with {startup2}. Within '
         'built-in {feature} makes {verbing1} {comparative} than ever. '
          'With over {number} {noun}s {verbing2} on {name} daily, you\'ll never '
          'to worry about {badNoun} again.')
-slogan = '{name}. The {superlative} way to {verb}.' 
+slogan = '{name}. The {superlative} way to {verb}.'
 
 snippets = [('By {noun}s, for {noun}s', '{name} was made with {verbing} in mind.'),
             ('{comparative} than {startup}', '{name} aims to have the {superlative} {feature} out there.'),
@@ -46,7 +50,7 @@ def get(string):
     while word in chosen:
         word = choice(words[string])
     chosen.append(word)
-    return word 
+    return word
 
 def getWords():
     words = {'name': (get('firstName') + get('secondName')),
@@ -77,12 +81,12 @@ def getData():
     words = getWords()
 
     # We gotta do some formatting on the snippets
-    newSnippets = list() 
+    newSnippets = list()
     for title, buzz in snippets:
         newSnippets.append((title.format(**words).title(), buzz.format(**words)))
 
     return {'name': words['name'],
             'blurb': blurb.format(**words),
-            'paragraph': paragraph.format(**words), 
+            'paragraph': paragraph.format(**words),
             'slogan': slogan.format(**words),
             'snippets': newSnippets}
