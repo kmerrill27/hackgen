@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
     <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>>
-    <title>HackGen</title>
+    <title>{{ vals.name }}</title>
     <link href="{{ url_for('static', filename=vals.theme) }}" type="text/css" rel="stylesheet" media="screen">
 </head>
 <body>
@@ -39,7 +39,7 @@
                     <li class=''><a href="#">Contact us</a></li>
                     <li class=''><a href="#">Careers</a></li>
                     <li class=''><a href="#">Help center</a></li>
-                    <li class=''><a href="#">&copy; 2010-2012 HackGen. All rights reserved.</a></li>
+                    <li class=''><a href="#">&copy; 2010-2012 {{ vals.name }}. All rights reserved.</a></li>
                 </ul>
             </div>
         </div>
