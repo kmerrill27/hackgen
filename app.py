@@ -11,15 +11,7 @@ def show_random():
     global vals
     vals = RandomValues()
     bools = random.randint(0,1)
-    return render_template('index.html', vals=vals, bools=bools)
-
-@app.route("/about/")
-def second_page():
-    return render_template('about.html', vals=vals, widgets=randomWidgets())
-
-def randomWidgets():
-    widgets = listdir('templates/widgets')
-    return [('widgets/' + w) for w in widgets]
+    return render_template('about.html', vals=vals, bools=bools)
 
 @app.route("/about/")
 def second_page():
