@@ -35,3 +35,7 @@ img {
 	max-width: 320px;
 	padding: 10px 10px;
 }
+
+.carousel-caption {
+	color: white;
+}

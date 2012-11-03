@@ -2,6 +2,7 @@ from flask import Flask, render_template, url_for
 from os import listdir
 from os.path import isdir
 import random
+import content
 app = Flask(__name__)
 
 vals = None
@@ -9,7 +10,16 @@ vals = None
 def show_random():
     global vals
     vals = RandomValues()
-    return render_template('index.html', vals=vals)
+    bools = random.randint(0,1)
+    return render_template('index.html', vals=vals, bools=bools)
+
+@app.route("/about/")
+def second_page():
+    return render_template('about.html', vals=vals, widgets=randomWidgets())
+
+def randomWidgets():
+    widgets = listdir('templates/widgets')
+    return [('widgets/' + w) for w in widgets]
 
 @app.route("/about/")
 def second_page():
@@ -21,8 +31,10 @@ def randomWidgets():
 
 class RandomValues:
     def __init__(self):
+        self.data = content.getData()
+
         # Brand Name
-        self.name = "HackGen"
+        self.name = self.data["name"]
 
         # Get the theme to be used
         self.theme = self.getTheme()
@@ -43,9 +55,14 @@ class RandomValues:
         bottomButtons = ['Contact', 'Copyright', 'Privacy', 'Roadmap', 'Sitemap', 'Changes', 'Jobs', 'Status']
         self.bottomButtons = random.sample(bottomButtons, random.randint(2,4))
 
+
         self.feature3 = True
         if self.feature3:# randBool(): # build 3 feature
             self.generate3feature()
+
+        self.blurb = True
+        self.featurette = True
+        self.featurette_img = "img/" + random.choice(["chrome", "firefox", "safari"]) + ".png"
 
     def generate3feature(self):
         base_path = "static/img/feature3"
@@ -54,7 +71,7 @@ class RandomValues:
         random.shuffle(imgs)
         self.feature3s = []
         for i in range(3):
-            self.feature3s.append(Feature(imgs[i], "tagline", "some text"))
+            self.feature3s.append(Feature(imgs[i], self.data["snippets"][i][0], self.data["snippets"][i][1]))
 
     def getTheme(self):
         return 'theme' + str(random.randint(1,8)) + '.css'
