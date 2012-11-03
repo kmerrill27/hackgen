@@ -7,31 +7,13 @@
     <link href="{{ url_for('static', filename=vals.theme) }}" type="text/css" rel="stylesheet" media="screen">
 </head>
 <body>
-    <div class="navbar navbar-fixed-top">
-        <div class="navbar-inner">
-            <div class="container">
-                <ul class="nav">
-                    {% for leftButton in vals.leftButtons %}
-                        <li class=''><a href="#">{{ leftButton }}</a></li>
-                    {% endfor %}
-                </ul>
-                <ul class="nav pull-right">
-                    {% for rightButton in vals.rightButtons %}
-                        <li class=''><a href="#">{{ rightButton }}</a></li>
-                    {% endfor %}
-
-                    {% if vals.searchBar %}
-                        <li>
-                            <form class="navbar-search">
-                                <input type="text" class="search-query" placeholder="Search">
-                            </form>
-                        </li>
-                    {% endif %}
-                </ul>
-            </div>
-        </div>
-    </div>
-
+    {# -- Navbar -- #}
+    {% if vals.navbarTop %}
+    {% include "navbar-top.html"%}
+    {% else %}
+    {% include "navbar-side.html" %}
+    {% endif %}
+    
     <div class="navbar navbar-fixed-bottom">
         <div class="navbar-inner">
             <div class="container">
