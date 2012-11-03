@@ -1,0 +1,13 @@
+<!-- Bottom navbar -->
+<div class="navbar navbar-fixed-bottom">
+    <div class="navbar-inner">
+        <div class="container">
+            <ul class="nav pull-right">
+                {% for button in vals.bottomButtons %}
+                    <li class=''><a href='#'>{{ button }}</a></li>
+                {% endfor %}
+                <li class=''><a href="#">&copy; 2010-2012 {{ vals.name }}. All rights reserved.</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
