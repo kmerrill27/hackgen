@@ -25,8 +25,7 @@ class RandomValues:
 
         i = random.randint(0,numButtons)
         j = random.randint(i,numButtons)
-        self.leftButtons = [self.name]
-        self.leftButtons.extend(list(buttonsChosen)[:i])
+        self.leftButtons = list(buttonsChosen)[:i]
         self.rightButtons = list(buttonsChosen)[i:j]
 
         self.searchBar = randBool()
