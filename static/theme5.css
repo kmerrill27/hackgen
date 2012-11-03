@@ -102,7 +102,7 @@ a:hover{color:#e8d069;text-decoration:underline;}
 .container:after{clear:both;}
 .container-fluid{padding-right:20px;padding-left:20px;*zoom:1;}.container-fluid:before,.container-fluid:after{display:table;content:"";line-height:0;}
 .container-fluid:after{clear:both;}
-p{margin:0 0 10px;}
+p{margin:0 0 10px; color:black}
 .lead{margin-bottom:20px;font-size:21px;font-weight:200;line-height:30px;}
 small{font-size:85%;}
 strong{font-weight:bold;}
@@ -113,7 +113,7 @@ cite{font-style:normal;}
 .text-error{color:#b94a48;}
 .text-info{color:#3a87ad;}
 .text-success{color:#468847;}
-h1,h2,h3,h4,h5,h6{margin:10px 0;font-family:'Lobster',cursive;font-weight:normal;line-height:1;color:inherit;text-rendering:optimizelegibility;}h1 small,h2 small,h3 small,h4 small,h5 small,h6 small{font-weight:normal;line-height:1;color:#aaaaaa;}
+h1,h2,h3,h4,h5,h6{margin:10px 0;font-family:'Lobster',cursive;font-weight:normal;line-height:1;color:gray;text-rendering:optimizelegibility;}h1 small,h2 small,h3 small,h4 small,h5 small,h6 small{font-weight:normal;line-height:1;color:#aaaaaa;}
 h1{font-size:36px;line-height:40px;}
 h2{font-size:30px;line-height:40px;}
 h3{font-size:24px;line-height:40px;}

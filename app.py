@@ -2,6 +2,7 @@ from flask import Flask, render_template, url_for
 from os import listdir
 from os.path import isdir
 import random
+import content
 app = Flask(__name__)
 
 @app.route("/")
@@ -11,8 +12,10 @@ def show_random():
 
 class RandomValues:
     def __init__(self):
+        self.data = content.getData()
+
         # Brand Name
-        self.name = "HackGen"
+        self.name = self.data["name"]
 
         # Get the theme to be used
         self.theme = self.getTheme()
@@ -33,9 +36,14 @@ class RandomValues:
         bottomButtons = ['Contact', 'Copyright', 'Privacy', 'Roadmap', 'Sitemap', 'Changes', 'Jobs', 'Status']
         self.bottomButtons = random.sample(bottomButtons, random.randint(2,4))
 
+
         self.feature3 = True
         if self.feature3:# randBool(): # build 3 feature
             self.generate3feature()
+
+        self.blurb = True
+        self.featurette = True
+        self.featurette_img = "img/" + random.choice(["chrome", "firefox", "safari"]) + ".png"
 
     def generate3feature(self):
         base_path = "static/img/feature3"
@@ -44,7 +52,7 @@ class RandomValues:
         random.shuffle(imgs)
         self.feature3s = []
         for i in range(3):
-            self.feature3s.append(Feature(imgs[i], "tagline", "some text"))
+            self.feature3s.append(Feature(imgs[i], self.data["snippets"][i][0], self.data["snippets"][i][1]))
 
     def getTheme(self):
         return 'theme' + str(random.randint(1,8)) + '.css'

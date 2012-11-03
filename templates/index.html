@@ -23,11 +23,17 @@
     </div>
     #}
 
+    <div class="container" style="padding-top: 75px; vertical-align: middle; border-bottom: 1px solid #DDD; padding-bottom: 50px;">
+        {% include "blurb.html" %}
+    </div>
+
     {# Content #}
-    <div class="container" style="padding-top: 70px;">
-        {% if vals.feature3 %}
+    <div class="container" style="padding-top: 50px; padding-bottom: 80px">
         {% include "features.html" %}
-        {% endif %}
+    </div>
+
+    <div class="continer" style="padding-bottom: 50px; padding-top: 50px">
+        {% include "featurette.html" %}
     </div>
 
     {# -- Bottom Navbar -- #}
