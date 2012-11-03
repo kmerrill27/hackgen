@@ -16,7 +16,7 @@ def second_page():
     return render_template('about.html', vals=vals, widgets=randomWidgets())
 
 def randomWidgets():
-    widgets = ["signup.html", "signin.html"]
+    widgets = listdir('templates/widgets')
     return [('widgets/' + w) for w in widgets]
 
 class RandomValues:
