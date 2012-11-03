@@ -4,10 +4,20 @@ from os.path import isdir
 import random
 app = Flask(__name__)
 
+vals = None
 @app.route("/")
 def show_random():
+    global vals
     vals = RandomValues()
     return render_template('index.html', vals=vals)
+
+@app.route("/about/")
+def second_page():
+    return render_template('about.html', vals=vals, widgets=randomWidgets())
+
+def randomWidgets():
+    widgets = ["signup.html", "signin.html"]
+    return [('widgets/' + w) for w in widgets]
 
 class RandomValues:
     def __init__(self):

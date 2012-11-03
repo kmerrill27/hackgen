@@ -17,30 +17,14 @@
     {# -- Navbar -- #}
     {% include "navbar-top.html"%}
 
-    {#
-    <div style="width:800; height:500; margin-top:5%; margin-left:auto; margin-right:auto">
-        {% include 'carousel.html' %}
+    <div class="span6">
+        {% include widgets[0] %}
     </div>
-    #}
-
-    {# Content #}
-    <div class="container" style="padding-top: 70px;">
-        {% if vals.feature3 %}
-        {% include "features.html" %}
-        {% endif %}
+    <div class="span6">
+        {% include widgets[1] %}
     </div>
-
-    <a class="btn btn-primary btn-large" href="{{ url_for('second_page') }}">Learn more about {{ vals.name }}</a>
 
     {# -- Bottom Navbar -- #}
     {% include "navbar-bottom.html" %}
-
-    <script>
-        $(document).ready(function() {
-            $('.carousel').carousel({
-                interval:10000
-            });
-        });
-    </script>
 </body>
 </html>
