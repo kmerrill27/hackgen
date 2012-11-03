@@ -25,3 +25,13 @@ img {
 .fixed-box {
 	padding: 10px 10px 30px 10px;
 }
+
+.width-panel {
+	width: 1200px;
+	margin-left: 40px;
+}
+
+.fixed-panel {
+	max-width: 320px;
+	padding: 10px 10px;
+}
