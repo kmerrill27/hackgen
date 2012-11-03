@@ -1,6 +1,6 @@
 from random import choice
 
-words = {'noun': ['hacker', 'user', 'manager', 'tweeter', 'newbie'],
+words = {'noun': ['hacker', 'user', 'manager', 'tweeter', 'newbie', 'pro', 'guru'],
         'adjective': ['open-source', 'scalable', 'really awesome', 'cloud-based', 'Web 3.0',
                         'professional', 'resilient', 'incredibly exciting', 'robust',
                         'long-awaited'],
@@ -9,14 +9,14 @@ words = {'noun': ['hacker', 'user', 'manager', 'tweeter', 'newbie'],
         'time': ['seconds', 'hours', 'minutes'],
         'startup': ['twitter', 'GitHub', 'reddit', 'facebook', 'weather.com', 'Quora',
                         'square', 'amazon', 'BuzzFeed', 'mongoDB', 'Python', 'Java',
-                        '4chan', 'digg'],
+                        '4chan', 'digg', 'jQuery'],
         'adverb': ['efficiently', 'quickly', 'perfectly', 'reliably'],
         'verbing': ['coding', 'socializing', 'networking', 'playing'],
         'number': ['a hundred', 'three hundred', '10,000'],
         'firstName': ['Buzz', 'Cloud', 'My', 'Face', 'Git', 'Micro', 'Server',
-                        'Hacker', 'Dr', 'Scale'],
+                        'Hacker', 'Dr', 'Scale', 'Ghost', 'Fire'],
         'secondName': ['Feed', 'Book', 'Hub', '.js', 'DB', 'Flare', 'Connect',
-                        'Py'],
+                        'Py', 'Star', 'News'],
         'app': ['app', 'script', 'database', 'game', 'software', 'product'],
         'feature': ['aggregator', 'news feed', 'search engine', 'database',
                     'interpreter', 'ticker', 'algorithm', 'architecture'],
@@ -33,6 +33,10 @@ paragraph = ('{name} is like {startup1} crossed with {startup2}. Within '
          'With over {number} {noun}s {verbing2} on {name} daily, you\'ll never '
          'to worry about {badNoun} again.')
 slogan = '{name}. The {superlative} way to {verb}.' 
+
+snippets = [('By {noun}s, for {noun}s', '{name} was made with {verbing} in mind.'),
+            ('{comparative} than {startup}', '{name} aims to have the {superlative} {feature} out there.'),
+            ('{verb} in {time}', 'We at {name} know that being {adjective1} doesn\'t mean sacrificing {adjective2} software.')]
 
 chosen = list()
 
@@ -55,6 +59,7 @@ def getWords():
             'verbing1': get('verbing'),
             'verbing2': get('verbing'),
             'verb': get('verb'),
+            'startup': get('startup'),
             'startup1': get('startup'),
             'startup2': get('startup'),
             'superlative': get('superlative'),
@@ -70,7 +75,13 @@ def getWords():
 def getData():
     words = getWords()
 
+    # We gotta do some formatting on the snippets
+    newSnippets = list() 
+    for title, buzz in snippets:
+        newSnippets.append((title.format(**words).title(), buzz.format(**words)))
+
     return {'name': words['name'],
             'blurb': blurb.format(**words),
             'paragraph': paragraph.format(**words), 
-            'slogan': slogan.format(**words)} 
+            'slogan': slogan.format(**words),
+            'snippets': newSnippets}
