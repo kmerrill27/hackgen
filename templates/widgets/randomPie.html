@@ -1,0 +1,43 @@
+<div>
+    <div id="chartdiv"></div>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+    <script type="text/javascript" src="../../static/js/jquery.jqplot.min.js"></script>
+    <script type="text/javascript" src="../../static/js/jqplot.pieRenderer.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="../../static/css/jquery.jqplot.min.css" />
+    <script>
+        function nextInt(n) {
+            return Math.floor(Math.random() * n);
+        }
+
+        function makeDataArray(data) {
+            return [['Python', data[0]], ['Javascript', data[1]],
+            ['Java', data[2]], ['Ruby', data[3]], ['C', data[4]]]
+        }
+
+        function getRandomArray() {
+            var theArray = new Array(5);
+            var total = 0;
+            for(var i=0; i< theArray.length; i++) {
+                theArray[i] = nextInt(20) + 5;
+                total += theArray[i];
+            }
+
+            theArray[theArray.length - 1] = 100 - total; 
+            return theArray;
+        }
+
+        $(document).ready(function() {
+            var plot1 = $.jqplot ('chartdiv', [makeDataArray(getRandomArray())], {
+                'seriesDefaults': {
+                    'renderer':jQuery.jqplot.PieRenderer,
+                    'rendererOptions': {
+                        'showDataLabels': true
+                    } 
+                }, 'legend': {
+                'show': true, 'location': 'e'
+            }
+            });
+
+        });
+    </script>
+</div>
