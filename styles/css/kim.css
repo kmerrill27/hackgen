@@ -1,3 +1,19 @@
 .navbar-search {
 	padding-left: 10px;
 }
+
+.padded-top {
+	padding-top: 100px;
+}
+
+.fixed-width {
+	width: 500px;
+}
+
+h3 {
+	text-align: center;
+}
+
+min-padding {
+	margin-left: 0px;
+}
