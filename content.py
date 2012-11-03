@@ -1,6 +1,6 @@
 from random import choice
 
-words = {'noun': ['hacker', 'user', 'manager', 'tweeter', 'newbie'],
+words = {'noun': ['hacker', 'user', 'manager', 'tweeter', 'newbie', 'pro', 'guru'],
         'adjective': ['open-source', 'scalable', 'really awesome', 'cloud-based', 'Web 3.0',
                         'professional', 'resilient', 'incredibly exciting', 'robust',
                         'long-awaited'],
@@ -9,14 +9,14 @@ words = {'noun': ['hacker', 'user', 'manager', 'tweeter', 'newbie'],
         'time': ['seconds', 'hours', 'minutes'],
         'startup': ['twitter', 'GitHub', 'reddit', 'facebook', 'weather.com', 'Quora',
                         'square', 'amazon', 'BuzzFeed', 'mongoDB', 'Python', 'Java',
-                        '4chan', 'digg'],
+                        '4chan', 'digg', 'jQuery'],
         'adverb': ['efficiently', 'quickly', 'perfectly', 'reliably'],
         'verbing': ['coding', 'socializing', 'networking', 'playing'],
         'number': ['a hundred', 'three hundred', '10,000'],
         'firstName': ['Buzz', 'Cloud', 'My', 'Face', 'Git', 'Micro', 'Server',
-                        'Hacker', 'Dr', 'Scale'],
+                        'Hacker', 'Dr', 'Scale', 'Ghost', 'Fire'],
         'secondName': ['Feed', 'Book', 'Hub', '.js', 'DB', 'Flare', 'Connect',
-                        'Py'],
+                        'Py', 'Star', 'News'],
         'app': ['app', 'script', 'database', 'game', 'software', 'product'],
         'feature': ['aggregator', 'news feed', 'search engine', 'database',
                     'interpreter', 'ticker', 'algorithm', 'architecture'],
@@ -27,7 +27,7 @@ words = {'noun': ['hacker', 'user', 'manager', 'tweeter', 'newbie'],
 
 blurb = '{name} is a {adjective1}, {adjective2} way for {noun}s to get {verbing} in {time}.'
 
-paragraph = ('{name} is like {startup} crossed with {startup}. Within '
+paragraph = ('{name} is like {startup1} crossed with {startup2}. Within '
         '{time}, you\'ll have your {app} running {adverb}. Better yet, our '
         'built-in {feature} makes {verbing1} {comparative} than ever. '
          'With over {number} {noun}s {verbing2} on {name} daily, you\'ll never '
@@ -75,8 +75,13 @@ def getWords():
 def getData():
     words = getWords()
 
+    # We gotta do some formatting on the snippets
+    newSnippets = list() 
+    for title, buzz in snippets:
+        newSnippets.append((title.format(**words).title(), buzz.format(**words)))
+
     return {'name': words['name'],
             'blurb': blurb.format(**words),
             'paragraph': paragraph.format(**words), 
             'slogan': slogan.format(**words),
-            'snippets': [map(lambda x: x.format(**words), tup) for tup in snippets]}
+            'snippets': newSnippets}
